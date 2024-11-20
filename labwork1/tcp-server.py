@@ -1,20 +1,6 @@
 import socket 
-from enum import Enum
 import os
-
-# Defining Socket 
-HOST = '127.0.0.1'
-PORT = 8080
-TOTALCLIENTS = 1
-BUFFERSIZE = 1024
-
-class Signal(Enum):
-    CLOSE_SERVER = b'CLS'
-    SEND_A_FILE = b'SAF'
-    REQUEST_A_FILE = b'RAF'
-    SEND_A_REPO = b'SAR'
-    REQUEST_A_REPO = b'RAR'
-    DONE = b'D1'
+from constant import *
 
 def receive_file(client_socket, filename):
     """Receives a file from the client."""
@@ -22,7 +8,7 @@ def receive_file(client_socket, filename):
         print(f"Receiving file: {filename}")
         while True:
             data = client_socket.recv(BUFFERSIZE)
-            if not data or data == Signal.DONE:  # End signal
+            if not data or data == Signal.DONE.value:  # End signal
                 break
             file.write(data)
     print(f"File received: {filename}")
@@ -41,7 +27,7 @@ def send_file(client_socket, filename):
         print("File not found.")
 
 def receive_signal(client_socket) -> bytes:
-    sig = client_socket.recv(BUFFERSIZE)
+    sig = client_socket.recv(SIGNALSIZE)
     return sig
 
 
@@ -58,9 +44,17 @@ if __name__ == "__main__":
         print(f"Connected by {client_address}")
         while True:
             sig = receive_signal(client_socket)
-            if not sig or sig == Signal.CLOSE_SERVER:
+            if sig == Signal.CLOSE_SERVER.value:
+                print('closing')
                 break
+            
+            if sig == Signal.SEND_A_FILE.value:
+                receive_file(client_socket, "server-output.txt")
 
+
+            if not sig:
+                break
+            print(sig.decode())
             
 
     fileno = 0
