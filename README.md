@@ -11,5 +11,7 @@ USTH ICT 2024 Distributed Systems
 Group Info
 =======================
 
-* Name 1 (ID1)
-* Name 2 (ID2)
+* Nguyen Trong Minh (22BI13304)
+* Le Xuan Loc (22BI13256)
+* Nguyen Manh Hung (22BI13183)
+* Tran Luong Hoang Anh (22BI13039)
