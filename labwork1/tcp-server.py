@@ -1,47 +1,68 @@
 import socket 
+from enum import Enum
+import os
 
 # Defining Socket 
-host = '127.0.0.1'
-port = 8080
-totalclient = 1
+HOST = '127.0.0.1'
+PORT = 8080
+TOTALCLIENTS = 1
+BUFFERSIZE = 1024
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-sock.bind((host, port)) 
-sock.listen(totalclient) 
+class Signal(Enum):
+    CLOSE_SERVER = b'CLS'
+    SEND_A_FILE = b'SAF'
+    REQUEST_A_FILE = b'RAF'
+    SEND_A_REPO = b'SAR'
+    REQUEST_A_REPO = b'RAR'
+    DONE = b'D1'
 
-# Establishing Connections 
-connections = [] 
-print('Initiating clients') 
-for i in range(totalclient): 
-    conn = sock.accept() 
-    connections.append(conn) 
-    print('Connected with client', i+1) 
+def receive_file(client_socket, filename):
+    """Receives a file from the client."""
+    with open(filename, 'wb') as file:
+        print(f"Receiving file: {filename}")
+        while True:
+            data = client_socket.recv(BUFFERSIZE)
+            if not data or data == Signal.DONE:  # End signal
+                break
+            file.write(data)
+    print(f"File received: {filename}")
 
-fileno = 0
-idx = 0
-for conn in connections: 
-    # Receiving File Data 
-    idx += 1
-    data = conn[0].recv(1024).decode() 
+def send_file(client_socket, filename):
+    """Sends a file to the client."""
+    if os.path.exists(filename):
+        print(f"Sending file: {filename}")
+        with open(filename, 'rb') as file:
+            while chunk := file.read(BUFFERSIZE):
+                client_socket.send(chunk)
+        client_socket.send(Signal.DONE)  # End signal
+        print("File sent successfully.")
+    else:
+        client_socket.send(b'ERROR: File not found')
+        print("File not found.")
 
-    if not data: 
-        continue
-# Creating a new file at server end and writing the data 
-    filename = 'server-output'+str(fileno)+'.txt'
-    fileno = fileno+1
-    fo = open(filename, "w") 
-    while data: 
-        if not data: 
-            break
-        else: 
-            fo.write(data) 
-            data = conn[0].recv(1024).decode() 
+def receive_signal(client_socket) -> bytes:
+    sig = client_socket.recv(BUFFERSIZE)
+    return sig
 
-    print() 
-    print('Receiving file from client', idx) 
-    print() 
-    print('Received successfully! New filename is:', filename) 
-    fo.close() 
-# Closing all Connections 
-for conn in connections: 
-    conn[0].close() 
+
+if __name__ == "__main__":
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+    sock.bind((HOST, PORT)) 
+    sock.listen(TOTALCLIENTS) 
+
+    # Establishing Connections 
+    client_socket, client_address = sock.accept()
+
+
+    with client_socket:
+        print(f"Connected by {client_address}")
+        while True:
+            sig = receive_signal(client_socket)
+            if not sig or sig == Signal.CLOSE_SERVER:
+                break
+
+            
+
+    fileno = 0
+    idx = 0
+

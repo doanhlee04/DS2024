@@ -1,8 +1,17 @@
 import socket 
+from enum import Enum
 # Creating Client Socket 
 
 host = '127.0.0.1'
 port = 8080
+
+class Signal(Enum):
+    CLOSE_SERVER = b'CLS'
+    SEND_A_FILE = b'SAF'
+    REQUEST_A_FILE = b'RAF'
+    SEND_A_REPO = b'SAR'
+    REQUEST_A_REPO = b'RAR'
+    DONE = b'D1'
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 # Connecting with Server 
