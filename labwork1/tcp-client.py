@@ -1,17 +1,26 @@
-# Import socket module 
-import socket			 
+import socket 
+# Creating Client Socket 
 
-# Create a socket object 
-s = socket.socket()		 
+host = '127.0.0.1'
+port = 8080
 
-# Define the port on which you want to connect 
-port = 12345			
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+# Connecting with Server 
+sock.connect((host, port)) 
 
-# connect to the server on local computer 
-s.connect(('127.0.0.1', port)) 
+filename = 'cli-send.txt'
+try: 
+# Reading file and sending data to server 
+    fi = open(filename, "r") 
+    data = fi.read() 
+    if not data: 
+        exit
+    while data: 
+        sock.send(str(data).encode()) 
+        data = fi.read() 
 
-# receive data from the server and decoding to get the string.
-print (s.recv(1024).decode())
-# close the connection 
-s.close()	 
-	
+    # File is closed after data is sent 
+    fi.close() 
+
+except IOError: 
+    print('You entered an invalid filename!\nPlease enter a valid name') 

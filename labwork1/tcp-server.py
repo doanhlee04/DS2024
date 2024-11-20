@@ -1,39 +1,47 @@
-# first of all import the socket library 
-import socket			 
+import socket 
 
-# next create a socket object 
-s = socket.socket()		 
-print ("Socket successfully created")
+# Defining Socket 
+host = '127.0.0.1'
+port = 8080
+totalclient = 1
 
-# reserve a port on your computer in our 
-# case it is 12345 but it can be anything 
-port = 12345			
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+sock.bind((host, port)) 
+sock.listen(totalclient) 
 
-# Next bind to the port 
-# we have not typed any ip in the ip field 
-# instead we have inputted an empty string 
-# this makes the server listen to requests 
-# coming from other computers on the network 
-s.bind(('', port))		 
-print ("socket binded to %s" %(port)) 
+# Establishing Connections 
+connections = [] 
+print('Initiating clients') 
+for i in range(totalclient): 
+    conn = sock.accept() 
+    connections.append(conn) 
+    print('Connected with client', i+1) 
 
-# put the socket into listening mode 
-s.listen(5)	 
-print ("socket is listening")		 
+fileno = 0
+idx = 0
+for conn in connections: 
+    # Receiving File Data 
+    idx += 1
+    data = conn[0].recv(1024).decode() 
 
-# a forever loop until we interrupt it or 
-# an error occurs 
-while True: 
+    if not data: 
+        continue
+# Creating a new file at server end and writing the data 
+    filename = 'server-output'+str(fileno)+'.txt'
+    fileno = fileno+1
+    fo = open(filename, "w") 
+    while data: 
+        if not data: 
+            break
+        else: 
+            fo.write(data) 
+            data = conn[0].recv(1024).decode() 
 
-    # Establish connection with client. 
-    c, addr = s.accept()	 
-    print ('Got connection from', addr )
-
-    # send a thank you message to the client. encoding to send byte type. 
-    c.send('Thank you for connecting'.encode()) 
-
-    # Close the connection with the client 
-    c.close()
-
-    # Breaking once connection closed
-    break
+    print() 
+    print('Receiving file from client', idx) 
+    print() 
+    print('Received successfully! New filename is:', filename) 
+    fo.close() 
+# Closing all Connections 
+for conn in connections: 
+    conn[0].close() 
