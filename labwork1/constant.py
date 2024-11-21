@@ -13,5 +13,8 @@ class Signal(Enum):
     SEND_A_REPO = b'SAR'
     REQUEST_A_REPO = b'RAR'
     DONE = b'DON'
+    ERROR = b'ERR'
+    PING = b'PIN'
+    PONG = b'PON'
 
 SIGNALSIZE = getsizeof(Signal.CLOSE_SERVER.value)

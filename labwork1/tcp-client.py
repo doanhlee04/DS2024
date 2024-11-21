@@ -9,10 +9,11 @@ def send_signal(client_socket: socket.socket, signal: Signal ):
     client_socket.send(signal.value)
     pass
 
-def recv_signal():
-    pass
+def recv_signal(client_socket: socket.socket) -> bytes:
+    return client_socket.recv(SIGNALSIZE)
 
 def send_file(client_socket : socket.socket, file_name: str):
+    """Send a file to server"""
     if not exists(file_name):
         raise FileNotFoundError(f'{file_name} does not exist')
     
@@ -25,16 +26,39 @@ def send_file(client_socket : socket.socket, file_name: str):
 
     send_signal(client_socket, Signal.DONE)
 
+def request_file(client_socket : socket.socket, file_name: str, save_file=None):
+    """Request a file from server"""
+    if save_file is None: save_file = file_name
 
-def receive_file(client_socket : socket.socket, file_name: str):
     send_signal(client_socket, Signal.REQUEST_A_FILE )
+    sleep(0.1)
+    client_socket.send(file_name.encode())
+    sleep(0.1)
+
+    response = recv_signal(client_socket)
+    if response == Signal.ERROR.value:
+        print("Error: File not found")
+        return None
+     
+    with open(save_file, 'wb') as file:
+        print(f"Downloading file: {file_name}")
+        while True:
+            data = client_socket.recv(BUFFERSIZE)
+            send_signal(client_socket, Signal.PONG)
+
+            if not data or data == Signal.DONE.value:  # End signal
+                break
+
+            file.write(data)
+            
+
     pass
 
 def send_repo(client_socket : socket.socket, repo_name: str):
     send_signal(client_socket, Signal.SEND_A_REPO )
     pass
 
-def receive_repo(client_socket : socket.socket, repo_name: str):
+def request_repo(client_socket : socket.socket, repo_name: str):
     send_signal(client_socket, Signal.REQUEST_A_REPO )
     pass
 
@@ -43,6 +67,8 @@ if __name__ == "__main__":
     # Connecting with Server 
     cli_sock.connect((HOST, PORT)) 
 
-    send_file(cli_sock, 'cli-send.txt')
+    # region do something
+    request_file(cli_sock, 'ser-send.txt', 'cli-recv.txt')
     sleep(0.1)
     send_signal(cli_sock, Signal.CLOSE_SERVER)
+    # endregion
