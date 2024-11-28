@@ -1,30 +1,59 @@
-import json
+import os
+import pickle
 import socket
-import inspect
-from threading import Thread
-import warnings
 
-# rpc.py
-class RPCServer:
-    def __init__(self, host:str='127.0.0.1', port:int=8080) -> None:
-        self.host = host
-        self.port = port
-        self.address = (host, port)
-        self._methods = {}
+# Server configuration
+HOST = '127.0.0.1'
+PORT = 5000
 
-    def register_method(self, func) -> None:
-        if not callable(func):
-            raise Exception("Adding a non function object is not allowed")
-        self._methods.update({func.__name__ : func})
+# Directory where uploaded files will be saved
+SERVER_DIR = r"C:\Users\HG\Downloads\hoctap\Distributed-System\DS2024\labwork2\file-transfered\server_files"
 
-class RPCClient:
-    def __init__(self) -> None:
-        pass
+# Ensure the directory exists
+os.makedirs(SERVER_DIR, exist_ok=True)
 
-    def __str__(self) -> str:
-        return "A client"
+def save_file(filename, file_data):
+    """Save the uploaded file to the server directory."""
+    try:
+        file_path = os.path.join(SERVER_DIR, filename)
+        with open(file_path, 'wb') as f:
+            f.write(file_data)
+        print(f"File saved successfully: {file_path}")
+    except Exception as e:
+        print(f"Error saving file: {e}")
 
-if __name__ == '__main__':
-    test_server = RPCServer()
-    
-    test_server.register_method(RPCServer)
+def handle_client(conn):
+    """Handle client requests."""
+    try:
+        data = pickle.loads(conn.recv(4096))
+        method = data.get('method')
+        params = data.get('params')
+
+        if method == 'upload':
+            filename = params['filename']
+            file_data = params['data']
+            save_file(filename, file_data)
+            response = {'status': 'success', 'message': f"{filename} uploaded"}
+        else:
+            response = {'status': 'error', 'message': 'Invalid method'}
+
+        conn.sendall(pickle.dumps(response))
+    except Exception as e:
+        print(f"Error handling client: {e}")
+    finally:
+        conn.close()
+
+def start_server():
+    """Start the server."""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+        server_socket.bind((HOST, PORT))
+        server_socket.listen(5)
+        print(f"Server listening on {HOST}:{PORT}")
+
+        while True:
+            conn, addr = server_socket.accept()
+            print(f"Connected by {addr}")
+            handle_client(conn)
+
+if __name__ == "__main__":
+    start_server()
