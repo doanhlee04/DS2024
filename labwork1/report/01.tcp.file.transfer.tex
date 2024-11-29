@@ -1,6 +1,7 @@
 % !tex root = 01.tcp.file.transfer.tex
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage{bookmark}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
  \geometry{
@@ -58,6 +59,7 @@
     \fancyhead[L]{Practical 1}
     \fancyhead[R]{\theauthor}
 }
+\usepackage{fancyvrb}
 \makeatletter
 \def\@maketitle{%
   \newpage
@@ -88,7 +90,7 @@
 \section*{System design}
 As mentioned in the assignment, we created a system consists of 2 members, a server and a client. 
 We also created a file to import constants used in our system.
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
   HOST = '127.0.0.1'
   PORT = 8080
   TOTALCLIENTS = 1
@@ -113,7 +115,7 @@ We introduced 5 signals for noticing server about what is going to happen from c
 and 4 signals to communicate between server and client $ \texttt{DONE, ERROR, PING, PONG}$. We also fixed size of each bytes buffer to be sent for files' content at 1024 bytes, and for signal is the size of 36 bytes. \\
 \\
 Our server first bind itself to a port, in our case 127.0.0.1:8080, it then start listening to any connection from client, which is 1 only. 
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
   sock.bind((HOST, PORT)) 
   sock.listen(TOTALCLIENTS) 
@@ -123,7 +125,7 @@ Our server first bind itself to a port, in our case 127.0.0.1:8080, it then star
 \end{lstlisting}
 At this point we used a loop to check if the client has sent any signal to the server to send or request any file. We have 4 functions to send and receive any file as requseted from client.
 If the signal sent from client match specific signal addressed for each function, the server executes it. \pagebreak
-\begin{lstlisting}
+\begin{lstlisting}[frame=single]
   while True:
     sig = receive_signal(client_socket)
     if sig == Signal.CLOSE_SERVER.value:
@@ -150,9 +152,12 @@ After all, take a look at our server workflow graph:\\
 \end{center}
 
 \section*{Functions design}\label{functions}
+
 In this section, we will go through 4 functions designed to send 1 or more files between server and client in our system. 
-The first funtion is to send a single file from client to server: \pagebreak
-\begin{lstlisting}
+
+\subsection*{Send a file from client to server}
+The first funtion is to send a single file from client to server, we start by take a look at client-side code: \pagebreak
+\begin{lstlisting}[frame=single]
   def send_file(client_socket : socket.socket, file_name: str):
     """Send a file to server"""
     if not exists(file_name):
@@ -171,7 +176,93 @@ The first funtion is to send a single file from client to server: \pagebreak
     sleep(0.1)
     send_signal(client_socket, Signal.DONE)
 \end{lstlisting}
+We first make sure the file we want to send is visible by the client object, then we send a $ \texttt{SEND\_A\_FILE} $ signal to let the sever know 
+that we are going to send a file and it have to ready to receive for it. Next step, we send file name to the server in case the server does not have 
+a specific name to save this file, it will use the name provided by client. After that, we read file content by chunk of size 1024 bytes and send each to
+server until there are nothing left. At the end, send a $ \texttt{DONE} $ signal to confirm that we have sent everything. On the other side, the server 
+also run a sequential actions to read everything sent by client. 
+\begin{lstlisting}[frame=single]
+  def receive_file(
+    client_socket: socket.socket, 
+    file_name: str | None = None, 
+    repo_to_save: str | None = None
+    ) -> None:
+  """Receives a file from the client."""
 
+  # Get file name from client side
+  clif_name = client_socket.recv(BUFFERSIZE)
+  clif_name = clif_name.decode()
+
+  if file_name is None: file_name = clif_name
+  if repo_to_save is not None: file_name = os.path.join(repo_to_save, file_name)
+
+  with open(file_name, 'wb') as file:
+      print(f"Receiving file: {clif_name}")
+      while True:
+          data = client_socket.recv(BUFFERSIZE)
+
+          if not data or data == Signal.DONE.value:  # End signal
+              break
+          file.write(data)
+
+  print(f"File received: {file_name}")
+\end{lstlisting}
+Quickly go through the code, we read file name sent by client, use it to save file in case save path is not specified, and then write every chunk of information
+into a new file, in this case is a text file.
+\subsection*{Request a file from server by client}
+This function is used to request for any file stored on server. The client first send a signal for to notice the server that it need to download a file, then
+send the requested file name to server. And then wait for the server to respond with file content. We also have a litle signal "ping-pong" between server and client
+to make sure the connection is secured during the process.\pagebreak
+\begin{lstlisting}[frame=single]
+  def request_file(client_socket : socket.socket, file_name: str, save_file=None):
+    """Request a file from server"""
+    if save_file is None: save_file = file_name
+
+    send_signal(client_socket, Signal.REQUEST_A_FILE )
+    sleep(0.1)
+    client_socket.send(file_name.encode())
+    sleep(0.1)
+
+    response = recv_signal(client_socket)
+    if response == Signal.ERROR.value:
+        print("Error: File not found")
+        return None
+     
+    with open(save_file, 'wb') as file:
+        print(f"Downloading file: {file_name}")
+        while True:
+            data = client_socket.recv(BUFFERSIZE)
+            send_signal(client_socket, Signal.PONG)
+
+            if not data or data == Signal.DONE.value:  # End signal
+                break
+
+            file.write(data)
+\end{lstlisting}
+On the server-side, it receives name of the requested file outside the function, and then pass it into the function below:
+\begin{lstlisting}[frame=single]
+  def send_file(
+        client_socket: socket.socket, 
+        file_name: str
+        ) -> None:
+    """Sends a file to the client."""
+    if os.path.exists(file_name):
+        print(f"Sending file: {file_name}")
+
+        with open(file_name, 'rb') as file:
+            while chunk := file.read(BUFFERSIZE):
+                send_signal(client_socket, Signal.PING)
+                sleep(0.1)
+                client_socket.send(chunk)
+
+        sleep(0.1)
+        send_signal(client_socket, Signal.DONE)  # End signal
+
+        print("File sent successfully.")
+    else:
+        client_socket.send(b'ERROR: File not found')
+        print("File not found.")
+\end{lstlisting}
 \section*{Other works}
 \lipsum[4-4]
 

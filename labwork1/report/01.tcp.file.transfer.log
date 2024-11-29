@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.28)  29 NOV 2024 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.28)  29 NOV 2024 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -134,7 +134,12 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip51
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count282
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
@@ -143,9 +148,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count282
-\Gm@cntv=\count283
-\c@Gm@tempcnt=\count284
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
 \Gm@bindingoffset=\dimen146
 \Gm@wd@mp=\dimen147
 \Gm@odd@mp=\dimen148
@@ -176,24 +181,24 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmargin=\skip53
 \droptitle=\skip54
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count285
+\lst@mode=\count286
 \lst@gtempboxa=\box52
 \lst@token=\toks21
-\lst@length=\count286
+\lst@length=\count287
 \lst@currlwidth=\dimen156
-\lst@column=\count287
-\lst@pos=\count288
+\lst@column=\count288
+\lst@pos=\count289
 \lst@lostspace=\dimen157
 \lst@width=\dimen158
-\lst@newlines=\count289
-\lst@lineno=\count290
+\lst@newlines=\count290
+\lst@lineno=\count291
 \lst@maxwidth=\dimen159
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count291
-\lst@skipnumbers=\count292
+\c@lstnumber=\count292
+\lst@skipnumbers=\count293
 \lst@framebox=\box53
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
@@ -206,8 +211,8 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package color Info: Redefining color blue on input line 24.
-Package hyperref Info: Option `colorlinks' set `true' on input line 31.
+Package color Info: Redefining color blue on input line 25.
+Package hyperref Info: Option `colorlinks' set `true' on input line 32.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -221,19 +226,27 @@ Package: fancyhdr 2024/11/20 v4.4 Extensive control of page headers and footers
 \f@nch@O@erf=\skip61
 \f@nch@O@olf=\skip62
 \f@nch@O@orf=\skip63
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count294
+\FV@InFile=\read2
+\FV@TabBox=\box54
+\c@FancyVerbLine=\count295
+\FV@StepNumber=\count296
+\FV@OutFile=\write3
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-11-02 L3 programming layer (loader) 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count293
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count297
+\l__pdf_internal_box=\box55
 ))
 Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count294
-\l__lipsum_a_int=\count295
-\l__lipsum_b_int=\count296
+\g__lipsum_par_int=\count298
+\l__lipsum_a_int=\count299
+\l__lipsum_b_int=\count300
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/cmbright.sty
 Package: cmbright 2005/04/13 v8.1 (WaS)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
@@ -305,29 +318,25 @@ File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
 )) (./01.tcp.file.transfer.aux)
 \openout1 = `01.tcp.file.transfer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-Package hyperref Info: Link coloring ON on input line 79.
- (./01.tcp.file.transfer.out) (./01.tcp.file.transfer.out)
-\@outlinefile=\write3
-\openout3 = `01.tcp.file.transfer.out'.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+Package hyperref Info: Link coloring ON on input line 81.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -365,16 +374,16 @@ Package hyperref Info: Link coloring ON on input line 79.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
+\scratchcounter=\count301
 \scratchdimen=\dimen160
-\scratchbox=\box55
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\scratchbox=\box56
+\nofMPsegments=\count302
+\nofMParguments=\count303
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count300
+\MPscratchCnt=\count304
 \MPscratchDim=\dimen161
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -382,26 +391,26 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count303
-LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 83.
+\c@lstlisting=\count307
+LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 85.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line 83.
+LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line 85.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omscmbrs.fd
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 83.
+(Font)              <7> on input line 85.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 83.
+(Font)              <5> on input line 85.
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 88.
-LaTeX Font Info:    Trying to load font information for OT1+cmtl on input line 91.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 90.
+LaTeX Font Info:    Trying to load font information for OT1+cmtl on input line 93.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/ot1cmtl.fd
 File: ot1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 110--116
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
 
  []
 
@@ -417,7 +426,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <usth.png, id=4, 424.58624pt x 228.10219pt>
 File: usth.png Graphic file (type png)
 <use usth.png>
-Package pdftex.def Info: usth.png  used on input line 126.
+Package pdftex.def Info: usth.png  used on input line 128.
 (pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
 
 Package fancyhdr Warning: \footskip is too small (30.0pt): 
@@ -427,40 +436,42 @@ Package fancyhdr Warning: \footskip is too small (30.0pt):
 [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./usth.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
 <TCP_server.png, id=43, 773.89125pt x 522.95375pt>
 File: TCP_server.png Graphic file (type png)
 <use TCP_server.png>
-Package pdftex.def Info: TCP_server.png  used on input line 149.
+Package pdftex.def Info: TCP_server.png  used on input line 151.
 (pdftex.def)             Requested size: 435.32419pt x 294.16873pt.
+LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <12> not available
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 158.
 
 
 [2 <./TCP_server.png>]
 
-[3] (./01.tcp.file.transfer.aux)
+[3]
+
+[4] (./01.tcp.file.transfer.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
-Package rerunfilecheck Info: File `01.tcp.file.transfer.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11712 strings out of 473330
- 183303 string characters out of 5719768
- 801286 words of memory out of 5000000
- 34641 multiletter control sequences out of 15000+600000
- 562363 words of font info for 51 fonts, out of 8000000 for 9000
+ 12441 strings out of 473330
+ 194892 string characters out of 5719768
+ 843795 words of memory out of 5000000
+ 35289 multiletter control sequences out of 15000+600000
+ 562960 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,14n,93p,338b,1260s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,14n,93p,338b,1280s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb>
-Output written on 01.tcp.file.transfer.pdf (3 pages, 119305 bytes).
+Output written on 01.tcp.file.transfer.pdf (4 pages, 128546 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 69 named destinations out of 1000 (max. 500000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 144 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
