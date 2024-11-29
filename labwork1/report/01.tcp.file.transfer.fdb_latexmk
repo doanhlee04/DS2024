@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1732868960.68808 "/home/tminh/Documents/Python/distributed-system/labwork1/report/01.tcp.file.transfer.tex" "01.tcp.file.transfer.pdf" "01.tcp.file.transfer" 1732868961.18817 0
-  "/home/tminh/Documents/Python/distributed-system/labwork1/report/01.tcp.file.transfer.tex" 1732868960.51643 9468 18252dac83591b67708673c64f9d0492 ""
+["pdflatex"] 1732896988.57394 "/home/tminh/Documents/Python/distributed-system/labwork1/report/01.tcp.file.transfer.tex" "01.tcp.file.transfer.pdf" "01.tcp.file.transfer" 1732896989.24482 0
+  "/home/tminh/Documents/Python/distributed-system/labwork1/report/01.tcp.file.transfer.tex" 1732896988.41037 11586 f7a42e95b4f483e133e84df4141b9393 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbr10.tfm" 1136768653 1304 95ad082f6791446dc43df559d5c79878 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cmbright/cmbr17.tfm" 1136768653 1292 864850248589e7d3af41afc829d0eaf3 ""
@@ -39,6 +39,8 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1730496337 8448 bd43e47d84d3704b7eabd59a92e43bf1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def" 1702241854 8818 aa5157b46368efebf023abff55611467 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty" 1702241854 18245 97e6be180cf07bb6f7008cfdaaecfce5 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/cmbright.sty" 1295311441 5449 577672f71e72b506039e93617e342780 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omlcmbrm.fd" 1295311441 971 fc3ca0f473ef3ba42b92ded9deeea11e ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omscmbrs.fd" 1295311441 913 6f5c8d9c0442a5f4c6fb1114c7c0abd9 ""
@@ -48,6 +50,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1732137328 18783 ca1f9ad6a93781d2dab27faf4529e23a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty" 1705955721 43712 c3d93734f3bc56e03c21b3dc69268d3c ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -85,8 +88,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1732727002 5476123 0aaf5f0b94d004f6c94b5aad0957af23 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1732727064 3343778 4e6041d1118792b02a7b76a9e743ee03 ""
   "/usr/local/texlive/2024/texmf.cnf" 1732726998.92843 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "01.tcp.file.transfer.aux" 1732868961.14643 253 a1cca435a8417901b4dc85604791e314 "pdflatex"
-  "01.tcp.file.transfer.tex" 1732868960.51643 9468 18252dac83591b67708673c64f9d0492 ""
+  "01.tcp.file.transfer.aux" 1732896989.19437 976 b4f37280375af16fdd004a057f9b7523 "pdflatex"
+  "01.tcp.file.transfer.tex" 1732896988.41037 11586 f7a42e95b4f483e133e84df4141b9393 ""
+  "REQUEST_A_FILE.drawio.png" 1732894944.58927 39983 9ffbc141518a15c0b6982109970fd715 ""
+  "REQUEST_A_REPO.drawio.png" 1732896093.15233 53090 bb3e28910e69255af7ef83416ab96115 ""
+  "SEND_A_FILE.drawio.png" 1732895053.58327 29422 be55faf046481b59b5a105a8a9ba484f ""
+  "SEND_A_REPO.drawio.png" 1732896277.07333 34574 57840492a013e774ced62c726fb64b8d ""
   "TCP_server.png" 1732856275.47027 33694 85dbecd59b6e2337486f25d8b22e6493 ""
   "usth.png" 1732771431.58101 37628 5d58195a411cbbdc4be27e7d6f3997a4 ""
   (generated)

@@ -10,10 +10,15 @@
  left=20mm,
  top=20mm,
  }
- \usepackage{graphicx}
- \usepackage{titling}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\captionsetup[figure]{
+    position=below,
+}
+\usepackage{titling}
 
- \title{A simple TCP system capable of transfering files
+\title{A simple TCP system capable of transfering files
 }
 
 \usepackage{listings}
@@ -52,13 +57,13 @@
 \date{November 2024}
  
  \usepackage{fancyhdr}
-\fancypagestyle{plain}{%  the preset of fancyhdr 
-    \fancyhf{} % clear all header and footer fields
-    \fancyfoot[R]{\includegraphics[width=2cm]{usth.png}}
-    \fancyfoot[L]{\thedate}
-    \fancyhead[L]{Practical 1}
-    \fancyhead[R]{\theauthor}
-}
+\pagestyle{fancyplain}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[R]{\includegraphics[width=2cm]{usth.png}}
+\fancyfoot[L]{\thedate}
+\fancyhead[L]{Practical 1}
+\fancyhead[R]{\theauthor}
+
 \usepackage{fancyvrb}
 \makeatletter
 \def\@maketitle{%
@@ -144,12 +149,14 @@ If the signal sent from client match specific signal addressed for each function
     if not sig:
         break
     print(sig.decode())
-\end{lstlisting}
+\end{lstlisting} 
 With the client, it is simply a sequential code to execute specific task that we defined inside \hyperref[functions]{Function desgin}.
-After all, take a look at our server workflow graph:\\
-\begin{center}
-  \hspace{20pt}\includegraphics[width=0.9\textwidth]{TCP_server.png} 
-\end{center}
+After all, take a look at our server workflow graph:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{TCP_server.png}
+  \caption{Overall workflow of TCP system}
+\end{figure}
 
 \section*{Functions design}\label{functions}
 
@@ -210,8 +217,8 @@ also run a sequential actions to read everything sent by client.
 Quickly go through the code, we read file name sent by client, use it to save file in case save path is not specified, and then write every chunk of information
 into a new file, in this case is a text file.
 \subsection*{Request a file from server by client}
-This function is used to request for any file stored on server. The client first send a signal for to notice the server that it need to download a file, then
-send the requested file name to server. And then wait for the server to respond with file content. We also have a litle signal "ping-pong" between server and client
+This function is used to request for any file stored on the server. The client first sends a signal to notice the server that it needs to download a file, then
+sends the requested file name to server. And then waits for the server to respond with file content. We also have a litle signal "ping-pong" between server and client
 to make sure the connection is secured during the process.\pagebreak
 \begin{lstlisting}[frame=single]
   def request_file(client_socket : socket.socket, file_name: str, save_file=None):
@@ -239,7 +246,7 @@ to make sure the connection is secured during the process.\pagebreak
 
             file.write(data)
 \end{lstlisting}
-On the server-side, it receives name of the requested file outside the function, and then pass it into the function below:
+On the server-side, it receives name of the requested file outside the function, and then passes it into the function below:
 \begin{lstlisting}[frame=single]
   def send_file(
         client_socket: socket.socket, 
@@ -263,7 +270,59 @@ On the server-side, it receives name of the requested file outside the function,
         client_socket.send(b'ERROR: File not found')
         print("File not found.")
 \end{lstlisting}
-\section*{Other works}
-\lipsum[4-4]
+Because the client already know about what is going on, the server checks file existance and sends it back right away. If the requested file is not exist,
+the server will send back an $ \texttt{ERROR}$ signal. As mentioned above, we have a "ping-pong" interaction between server and client between each chunk 
+being sent. After transfering file content, our server sends a $\texttt{DONE}$ signal as confirmation. 
 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=0.93\textwidth]{SEND_A_FILE.drawio.png} % first figure itself
+      \caption{Send a file workflow}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{REQUEST_A_FILE.drawio.png} % second figure itself
+      \caption{Request a file workflow}
+  \end{minipage}
+\end{figure}
+
+\subsection*{Send and request a repository}
+These 2 functons are just stack of multiple send a file function together to send multiple files inside a repository so I'll quickly provide 2 workflow charts
+for this part.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{SEND_A_REPO.drawio.png} % first figure itself
+      \caption{Send a repository workflow}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{REQUEST_A_REPO.drawio.png} % second figure itself
+      \caption{Request a repository workflow}
+  \end{minipage}
+\end{figure}
+\pagebreak
+\section*{Other works}
+We created a simple code to generate random content for text files to test our system in transfering files.
+
+\begin{lstlisting}[frame=single]
+  from os.path import join
+  import random
+  import lorem
+
+  random.seed(4090)
+  root = r'file-transfered'
+  dirs = ['client-send', 'server-send']
+
+  for dir in dirs:
+    dir = join(root,dir)
+    for i in range(1,10):
+      with open(join(dir, f'dummy{i}.txt'), 'w') as f:
+        random_text = lorem.paragraph()
+        f.write(random_text)
+\end{lstlisting}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.28)  29 NOV 2024 15:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.28)  29 NOV 2024 23:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -175,31 +175,56 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen154
 \Gin@req@width=\dimen155
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count286
+\float@exts=\toks21
+\float@box=\box52
+\@float@everytoks=\toks22
+\@floatcapt=\box53
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen156
+\captionmargin=\dimen157
+\caption@leftmargin=\dimen158
+\caption@rightmargin=\dimen159
+\caption@width=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count287
+\c@continuedfloat=\count288
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip52
 \thanksmargin=\skip53
 \droptitle=\skip54
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count286
-\lst@gtempboxa=\box52
-\lst@token=\toks21
-\lst@length=\count287
-\lst@currlwidth=\dimen156
-\lst@column=\count288
-\lst@pos=\count289
-\lst@lostspace=\dimen157
-\lst@width=\dimen158
-\lst@newlines=\count290
-\lst@lineno=\count291
-\lst@maxwidth=\dimen159
+\lst@mode=\count289
+\lst@gtempboxa=\box54
+\lst@token=\toks23
+\lst@length=\count290
+\lst@currlwidth=\dimen164
+\lst@column=\count291
+\lst@pos=\count292
+\lst@lostspace=\dimen165
+\lst@width=\dimen166
+\lst@newlines=\count293
+\lst@lineno=\count294
+\lst@maxwidth=\dimen167
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count292
-\lst@skipnumbers=\count293
-\lst@framebox=\box53
+\c@lstnumber=\count295
+\lst@skipnumbers=\count296
+\lst@framebox=\box55
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
@@ -211,8 +236,8 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package color Info: Redefining color blue on input line 25.
-Package hyperref Info: Option `colorlinks' set `true' on input line 32.
+Package color Info: Redefining color blue on input line 30.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -228,25 +253,25 @@ Package: fancyhdr 2024/11/20 v4.4 Extensive control of page headers and footers
 \f@nch@O@orf=\skip63
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count294
+\FV@CodeLineNo=\count297
 \FV@InFile=\read2
-\FV@TabBox=\box54
-\c@FancyVerbLine=\count295
-\FV@StepNumber=\count296
+\FV@TabBox=\box56
+\c@FancyVerbLine=\count298
+\FV@StepNumber=\count299
 \FV@OutFile=\write3
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-11-02 L3 programming layer (loader) 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count297
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box57
 ))
 Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count298
-\l__lipsum_a_int=\count299
-\l__lipsum_b_int=\count300
+\g__lipsum_par_int=\count301
+\l__lipsum_a_int=\count302
+\l__lipsum_b_int=\count303
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/cmbright.sty
 Package: cmbright 2005/04/13 v8.1 (WaS)
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
@@ -318,25 +343,25 @@ File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
 )) (./01.tcp.file.transfer.aux)
 \openout1 = `01.tcp.file.transfer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-Package hyperref Info: Link coloring ON on input line 81.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+Package hyperref Info: Link coloring ON on input line 86.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -374,43 +399,46 @@ Package hyperref Info: Link coloring ON on input line 81.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
-\scratchdimen=\dimen160
-\scratchbox=\box56
-\nofMPsegments=\count302
-\nofMParguments=\count303
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count304
-\MPscratchDim=\dimen161
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count304
+\scratchdimen=\dimen168
+\scratchbox=\box58
+\nofMPsegments=\count305
+\nofMParguments=\count306
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count307
+\MPscratchDim=\dimen169
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count307
-LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 85.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count310
+LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 90.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line 85.
+LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line 90.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/omscmbrs.fd
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 85.
+(Font)              <7> on input line 90.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 85.
+(Font)              <5> on input line 90.
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 90.
-LaTeX Font Info:    Trying to load font information for OT1+cmtl on input line 93.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 95.
+LaTeX Font Info:    Trying to load font information for OT1+cmtl on input line 98.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cmbright/ot1cmtl.fd
 File: ot1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 112--118
+Underfull \hbox (badness 10000) in paragraph at lines 117--123
 
  []
 
@@ -426,7 +454,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <usth.png, id=4, 424.58624pt x 228.10219pt>
 File: usth.png Graphic file (type png)
 <use usth.png>
-Package pdftex.def Info: usth.png  used on input line 128.
+Package pdftex.def Info: usth.png  used on input line 133.
 (pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
 
 Package fancyhdr Warning: \footskip is too small (30.0pt): 
@@ -436,42 +464,144 @@ Package fancyhdr Warning: \footskip is too small (30.0pt):
 [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./usth.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
-
- []
-
 <TCP_server.png, id=43, 773.89125pt x 522.95375pt>
 File: TCP_server.png Graphic file (type png)
 <use TCP_server.png>
-Package pdftex.def Info: TCP_server.png  used on input line 151.
-(pdftex.def)             Requested size: 435.32419pt x 294.16873pt.
+Package pdftex.def Info: TCP_server.png  used on input line 157.
+(pdftex.def)             Requested size: 464.33833pt x 313.77466pt.
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 158.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 165.
 
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+File: usth.png Graphic file (type png)
+<use usth.png>
+Package pdftex.def Info: usth.png  used on input line 167.
+(pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
+
+Package fancyhdr Warning: \footskip is too small (30.0pt): 
+(fancyhdr)                Make it at least 34.31973pt, for example:
+(fancyhdr)                \setlength{\footskip}{34.31973pt}.
 
 [2 <./TCP_server.png>]
 
-[3]
 
-[4] (./01.tcp.file.transfer.aux)
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+File: usth.png Graphic file (type png)
+<use usth.png>
+Package pdftex.def Info: usth.png  used on input line 223.
+(pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
+
+Package fancyhdr Warning: \footskip is too small (30.0pt): 
+(fancyhdr)                Make it at least 34.31973pt, for example:
+(fancyhdr)                \setlength{\footskip}{34.31973pt}.
+
+[3]
+<SEND_A_FILE.drawio.png, id=120, 282.05376pt x 322.20375pt>
+File: SEND_A_FILE.drawio.png Graphic file (type png)
+<use SEND_A_FILE.drawio.png>
+Package pdftex.def Info: SEND_A_FILE.drawio.png  used on input line 281.
+(pdftex.def)             Requested size: 202.42415pt x 231.23921pt.
+<REQUEST_A_FILE.drawio.png, id=121, 302.12875pt x 462.72874pt>
+File: REQUEST_A_FILE.drawio.png Graphic file (type png)
+<use REQUEST_A_FILE.drawio.png>
+Package pdftex.def Info: REQUEST_A_FILE.drawio.png  used on input line 286.
+(pdftex.def)             Requested size: 152.3628pt x 233.3549pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+File: usth.png Graphic file (type png)
+<use usth.png>
+Package pdftex.def Info: usth.png  used on input line 290.
+(pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
+
+Package fancyhdr Warning: \footskip is too small (30.0pt): 
+(fancyhdr)                Make it at least 34.31973pt, for example:
+(fancyhdr)                \setlength{\footskip}{34.31973pt}.
+
+[4]
+<SEND_A_REPO.drawio.png, id=173, 282.05376pt x 332.24126pt>
+File: SEND_A_REPO.drawio.png Graphic file (type png)
+<use SEND_A_REPO.drawio.png>
+Package pdftex.def Info: SEND_A_REPO.drawio.png  used on input line 299.
+(pdftex.def)             Requested size: 195.89455pt x 230.75237pt.
+<REQUEST_A_REPO.drawio.png, id=174, 302.12875pt x 573.14125pt>
+File: REQUEST_A_REPO.drawio.png Graphic file (type png)
+<use REQUEST_A_REPO.drawio.png>
+Package pdftex.def Info: REQUEST_A_REPO.drawio.png  used on input line 304.
+(pdftex.def)             Requested size: 195.89455pt x 371.61038pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+File: usth.png Graphic file (type png)
+<use usth.png>
+Package pdftex.def Info: usth.png  used on input line 309.
+(pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
+
+Package fancyhdr Warning: \footskip is too small (30.0pt): 
+(fancyhdr)                Make it at least 34.31973pt, for example:
+(fancyhdr)                \setlength{\footskip}{34.31973pt}.
+
+[5 <./SEND_A_FILE.drawio.png> <./REQUEST_A_FILE.drawio.png> <./SEND_A_REPO.drawio.png> <./REQUEST_A_REPO.drawio.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+File: usth.png Graphic file (type png)
+<use usth.png>
+Package pdftex.def Info: usth.png  used on input line 328.
+(pdftex.def)             Requested size: 56.9055pt x 30.5697pt.
+
+Package fancyhdr Warning: \footskip is too small (30.0pt): 
+(fancyhdr)                Make it at least 34.31973pt, for example:
+(fancyhdr)                \setlength{\footskip}{34.31973pt}.
+
+[6] (./01.tcp.file.transfer.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12441 strings out of 473330
- 194892 string characters out of 5719768
- 843795 words of memory out of 5000000
- 35289 multiletter control sequences out of 15000+600000
+ 13870 strings out of 473330
+ 222597 string characters out of 5719768
+ 869062 words of memory out of 5000000
+ 36687 multiletter control sequences out of 15000+600000
  562960 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,14n,93p,338b,1280s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,14n,93p,338b,1284s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb>
-Output written on 01.tcp.file.transfer.pdf (4 pages, 128546 bytes).
+Output written on 01.tcp.file.transfer.pdf (6 pages, 189518 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
- 144 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 229 compressed objects within 3 object streams
+ 165 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
