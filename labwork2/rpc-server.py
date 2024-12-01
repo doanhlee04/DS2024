@@ -23,20 +23,36 @@ def save_file(filename, file_data):
         print(f"Error saving file: {e}")
 
 def handle_client(conn):
-    """Handle client requests."""
     try:
         data = pickle.loads(conn.recv(4096))
+        print(f"Received request: {data}")
+        
         method = data.get('method')
         params = data.get('params')
-
+        
         if method == 'upload':
+            # Handle file upload
             filename = params['filename']
             file_data = params['data']
             save_file(filename, file_data)
             response = {'status': 'success', 'message': f"{filename} uploaded"}
+        
+        elif method == 'download':
+            # Handle file download
+            filename = params['filename']
+            filepath = os.path.join(SERVER_DIR, filename)
+            
+            if os.path.exists(filepath):
+                with open(filepath, 'rb') as f:
+                    file_data = f.read()
+                response = {'status': 'success', 'data': file_data}
+            else:
+                response = {'status': 'error', 'message': f"{filename} not found on server"}
+        
         else:
+            # Invalid method
             response = {'status': 'error', 'message': 'Invalid method'}
-
+        
         conn.sendall(pickle.dumps(response))
     except Exception as e:
         print(f"Error handling client: {e}")
